@@ -78,4 +78,8 @@ body {
   text-overflow: ellipsis;
 }
 
+.container {
+  max-width: 100% !important;
+}
+
 /*# sourceMappingURL=app.css.map */

@@ -7,7 +7,6 @@
 		<table class="table table-bordered">
 			<thead class="elegant-color" style="background-color: #32383e; color: white;">
 				<tr>
-					<td>ID</td>
 					<td>Name</td>
 					<td>Description</td>
 					<td>Price</td>
@@ -18,7 +17,6 @@
 			<tbody>
 				@foreach ($products as $product)
 				<tr>
-					<td>{{ $product->id }}</td>
 					<td>{{ $product->name }}</td>
 					<td>{!! $product->description !!}</td>
 					<td>{{ $product->price }}</td>
