@@ -7,7 +7,7 @@
                 <div class="user-panel">
                     <div class="pull-left image">
 
-                     <img src="{{url('/images/small/u_'.Auth::user()->id.'.jpg')}}" onerror="this.src='{{url('images/small/perfil.png')}}';" class="img-circle" alt="User Image" />
+                     <img src="{{url('/images/small/u_'.Auth::user()->id.'.jpg')}}" onerror="this.src='{{url('images/perfil.png')}}';" class="img-circle" alt="User Image" />
 
                  </div>
                  <div class="pull-left info">

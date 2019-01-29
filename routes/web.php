@@ -39,3 +39,18 @@ Route::post('/category/edit/{id}','CategoryController@update');
 Route::get('/inventory', 'InventoryController@index');
 Route::get('/inventory/create','InventoryController@create');
 Route::post('/inventory', 'InventoryController@store');
+
+
+Route::get('/images/{filename}',function($filename){
+	$path = storage_path("app/images/$filename");
+
+
+	if(!\File::exists($path)) abort(404);
+	$file = \File::get($path);
+	$type = \File::mimeType($path);
+
+	$response = Response::make($file,200);
+	$response->header("Content-Type", $type);
+
+	return $response;
+});
