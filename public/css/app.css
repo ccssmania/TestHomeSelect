@@ -82,4 +82,8 @@ body {
   max-width: 100% !important;
 }
 
+td {
+  max-width: 140px;
+}
+
 /*# sourceMappingURL=app.css.map */

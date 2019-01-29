@@ -46,4 +46,9 @@ class InventoryController extends Controller
         }
     }
 
+    public function showProduct($id){
+        $inventories = Product::find($id)->inventories()->paginate(15);
+        return view('inventory.index',compact('inventories'));
+    }
+
 }
