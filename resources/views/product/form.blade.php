@@ -9,28 +9,32 @@
 					<div class="form-group ">
 						<label class="col-md-4 control-label">Name </label>
 						<div class="col-md-6">
-							<input type="text" name="name"  placeholder="{{$product->name ? $product->name : 'Nombre'}}" class="form-control" {{$product->name ? '' : 'required'}}>
+							<input type="text" name="name"  placeholder="{{$product->name ? $product->name : 'Nombre'}}" value="{{old('name')}}" class="form-control" {{$product->name ? '' : 'required'}}>
 						</div>
 					</div>
 					<div class="form-group">
 						<label  class="col-md-4 control-label">Description </label>
 
 						<div class="col-md-6">
-							<textarea class="textarea" name="description">{{$product->description ? $product->description : ''}} {{old('description') ? old('description') : ''}}</textarea>
-
+							<textarea class="textarea" name="description" >{{$product->description ? $product->description : ''}} {{old('description') ? old('description') : ''}}</textarea>
+							@if ($errors->has('description'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('description') }}</strong>
+                                </span>
+                            @endif
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-4 control-label">Price</label>
 						<div class="col-md-6">
-							<input class="form-control" type="number" step="0.5" name="price" placeholder="{{$product->price ? $product->price : ''}}" {{$product->price ? '' : 'required'}}>
+							<input class="form-control" type="number" step="0.5" name="price" value="{{old('price')}}" placeholder="{{$product->price ? $product->price : ''}}" {{$product->price ? '' : 'required'}}>
 						</div>
 					</div>
 					@if($url != url('/product/edit/'.$product->id))
 					<div class="form-group">
 						<label class="col-md-4 control-label">Stock</label>
 						<div class="col-md-6">
-							<input class="form-control" type="number" name="stock" placeholder="{{$product->price ? $product->price : ''}}">
+							<input class="form-control" type="number" name="stock" value="{{old('stock')}}" placeholder="{{$product->price ? $product->price : ''}}">
 						</div>
 					</div>
 					@endif
@@ -38,8 +42,9 @@
 							<label class="col-md-4 control-label">Category</label>
 							<div class="col-md-6">
 								<select class="form-control" name="category_id" required>
+									<option value="" >Select One</option>
 									@foreach($categories as $category)
-										<option value="{{$category->id}}" {{$product->category_id && $product->category_id == $category->id ? 'selected' : ''}}></option>
+										<option value="{{$category->id}}" {{$product->category_id && $product->category_id == $category->id ? 'selected' : ''}}>{{$category->name}}</option>
 									@endforeach
 								</select>
 							</div>

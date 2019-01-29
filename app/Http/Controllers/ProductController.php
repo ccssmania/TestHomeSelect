@@ -25,7 +25,9 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
-
+    	$this->validate($request,[
+            'description' => 'required',
+        ]);
     	$product = new Product($request->all());
     	if($product->save()){
     		$stock = new Stock;
@@ -64,7 +66,7 @@ class ProductController extends Controller
     public function destroy($id){
         $product = Product::find($id);
         if($product->stock->stock == 0){
-
+        	$product->stock->delete();
 	        if($product->delete()){
 	            \Session::flash('message', 'Product Deleted');
 	            return redirect('/products');

@@ -27,7 +27,7 @@
                     <a href="{{url('/tasks')}}"> <i class="fa fa-dashboard"></i><span>Dashboard</span><span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i></span></a>
                         <ul class="treeview-menu">
-                            <li><a href="{{url('/category/create')}}">Product Categories</a></li>
+                            <li><a href="{{url('/category')}}">Product Categories</a></li>
                             <li><a href="{{url('/inventory')}}">Inventory List</a></li>
                         </ul>
                 </li>

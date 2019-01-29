@@ -11,6 +11,7 @@
 					<td>Description</td>
 					<td>Price</td>
 					<td>Stock</td>
+					<td>Category</td>
 					<td>Actions</td>
 				</tr>
 			</thead>
@@ -20,11 +21,11 @@
 					<td>{{ $product->name }}</td>
 					<td>{!! $product->description !!}</td>
 					<td>{{ $product->price }}</td>
-					<td>{{ $product->stock->quantity }}</td>
+					<td>{{ $product->stock->stock }}</td>
+					<td>{{ $product->category->name }}</td>
 					<td>
-						<a href="{{url("/product/$product->id")}}">Ver</a>
 						<a href="{{url('/product/'. $product->id .'/edit')}}">Editar</a>
-						@if($product->stock->quantity == 0)
+						@if($product->stock->stock == 0 || null)
 							@include('product.delete',['product' =>$product])
 						@endif
 					</td>

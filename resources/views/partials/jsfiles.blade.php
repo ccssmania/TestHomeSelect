@@ -15,6 +15,7 @@
 	<script>
 		$.material.init();
 	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/basic/jquery.qtip.min.js"></script>
@@ -23,4 +24,5 @@
 
 	<!-- AdminLTE App -->
 	<script src="{{url('js/app.js')}}"></script>
+	<script src="{{url('js/product.js')}}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.8/js/adminlte.js"></script>
