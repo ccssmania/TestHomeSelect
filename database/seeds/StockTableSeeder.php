@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Product;
 class StockTableSeeder extends Seeder
 {
     /**
@@ -11,9 +11,10 @@ class StockTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=1; $i <= 200; $i++) { 
+        $products = Product::all();
+        foreach($products as $product) { 
 	        DB::table('stock')->insert([
-	            'product_id' => $i,
+	            'product_id' => $product->id,
 	            'stock' => random_int(0,100),
 	        ]);
     	}
