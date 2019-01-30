@@ -9,61 +9,50 @@
 
 ## About This Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+The goal of this project is create a inventory module in which, you can have an inventory control, adding and removing stock 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- There are products categories.
+- Each product is linked with a category.
+- The product could be created with 0 stock.
+- A product could be deleted if and only if the stock of that product is 0.
+- You may add/remove inventory to a product un the module of inventories.
+- In inventory module will appear all the inventories of all products.
+- In Product interface you could see the inventory of each product.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+This is a Beta version.
 
-## Learning Laravel
+## Install
+Prerequisites:
+- Composer
+- PHP 7^
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+Download the git `git clone https://github.com/ccssmania/TestHomeSelect TestHomeSelect` and put it in "htdocs" folder or "www" depends of ypur local server.
+access the `cd TestHomeSelect`  and type
+`composer update`
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+open the `.env` file and modify it according to your apache and `SQL` specifications.
+NOTE: You have to have a DB called homeselect
+then type
+`php artisan migrate`  it will automatically create all the tables needed.
+then type
+`composer dump-autoload`
+And For populate the databases type the following commands.
+`php artisan db:seed --class=CategoriesTableSeede`
+`php artisan db:seed --class=ProductsTableSeede`
+`php artisan db:seed --class=StockTableSeede`
 
-## Laravel Sponsors
+Now you can acces first:
+`php artisan serve` and in the browser put `localhost:8000`
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+Or
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
+Go directly to the browser `localhost/TestHomeSelect/public`
 
-## Contributing
+## Easy Way
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+The project is already uploaded on HEROKU that is a free hosting, it already has some data, just creat a new acount and log in.
 
-## Security Vulnerabilities
+[TestHomeSelect](http://salty-depths-77006.herokuapp.com/public/register)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Note: remember that the data was created in a random way.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
