@@ -26,12 +26,12 @@ Prerequisites:
 - Composer
 - PHP 7^
 
-Download the project `git clone https://github.com/ccssmania/TestHomeSelect TestHomeSelect` and put it in "htdocs" folder or "www" depends of ypur local server.
+Download the project `git clone https://github.com/ccssmania/TestHomeSelect TestHomeSelect` and put it in "htdocs" folder or "www" depends of your local server.
 `cd TestHomeSelect`  and type
 `composer update`
 
 open the `.env` file and modify it according to your apache and `SQL` specifications.
-NOTE: You have to have a DB called homeselect
+NOTE: You have to have a DB called homeselect,
 then type
 `php artisan migrate`  it will automatically create all the tables needed.
 then type
@@ -41,7 +41,7 @@ And For populate the databases type the following commands.
 `php artisan db:seed --class=ProductsTableSeede`
 `php artisan db:seed --class=StockTableSeede`
 
-Now you can acces first:
+Now you can access it first:
 `php artisan serve` and in the browser put `localhost:8000`
 
 Or
