@@ -37,9 +37,9 @@ then type
 then type
 `composer dump-autoload`
 And For populate the databases type the following commands.
-`php artisan db:seed --class=CategoriesTableSeede`
-`php artisan db:seed --class=ProductsTableSeede`
-`php artisan db:seed --class=StockTableSeede`
+`php artisan db:seed --class=CategoriesTableSeeder`
+`php artisan db:seed --class=ProductsTableSeeder`
+`php artisan db:seed --class=StockTableSeeder`
 
 Now you can access it first:
 `php artisan serve` and in the browser put `localhost:8000`
