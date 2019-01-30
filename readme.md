@@ -11,11 +11,11 @@
 
 The goal of this project is create a inventory module in which, you can have an inventory control, adding and removing stock 
 
-- There are products categories.
+- There are categories.
 - Each product is linked with a category.
 - The product could be created with 0 stock.
-- A product could be deleted if and only if the stock of that product is 0.
-- You may add/remove inventory to a product un the module of inventories.
+- A product could be deleted if and only if, the stock of that product is 0.
+- You may add/remove inventory to a product in the module of inventories.
 - In inventory module will appear all the inventories of all products.
 - In Product interface you could see the inventory of each product.
 
@@ -26,8 +26,8 @@ Prerequisites:
 - Composer
 - PHP 7^
 
-Download the git `git clone https://github.com/ccssmania/TestHomeSelect TestHomeSelect` and put it in "htdocs" folder or "www" depends of ypur local server.
-access the `cd TestHomeSelect`  and type
+Download the project `git clone https://github.com/ccssmania/TestHomeSelect TestHomeSelect` and put it in "htdocs" folder or "www" depends of ypur local server.
+`cd TestHomeSelect`  and type
 `composer update`
 
 open the `.env` file and modify it according to your apache and `SQL` specifications.
