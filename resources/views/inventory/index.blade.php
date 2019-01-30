@@ -27,9 +27,15 @@
 		{{$inventories->links()}}
 	</div>
 	<div class="floating">
+		@if(isset($product))
+		<a href="{{url('/inventory/create/'.$product->id)}}" class="btn btn-primary btn-fab">
+			<i class="material-icons">add</i>
+		</a>
+		@else
 		<a href="{{url('/inventory/create')}}" class="btn btn-primary btn-fab">
 			<i class="material-icons">add</i>
 		</a>
+		@endif
 	</div>
 @endsection
 

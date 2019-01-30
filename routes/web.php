@@ -38,6 +38,7 @@ Route::post('/category/edit/{id}','CategoryController@update');
 
 Route::get('/inventory', 'InventoryController@index');
 Route::get('/inventory/create','InventoryController@create');
+Route::get('/inventory/create/{id}','InventoryController@createP');
 Route::post('/inventory', 'InventoryController@store');
 
 

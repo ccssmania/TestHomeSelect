@@ -22,6 +22,12 @@ class InventoryController extends Controller
         $products = Product::all();
     	return view('inventory.create', compact('inventory','products'));
     }
+    public function createP($id){
+        $inventory = new Inventory;
+        $products = Product::all();
+        $preProduct = Product::find($id);
+        return view('inventory.create', compact('inventory','products','preProduct'));
+    }
 
     public function store(Request $request){
 
@@ -47,8 +53,9 @@ class InventoryController extends Controller
     }
 
     public function showProduct($id){
-        $inventories = Product::find($id)->inventories()->paginate(15);
-        return view('inventory.index',compact('inventories'));
+        $product = Product::find($id);
+        $inventories = $product->inventories()->paginate(15);
+        return view('inventory.index',compact('inventories','product'));
     }
 
 }

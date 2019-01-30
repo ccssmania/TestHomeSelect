@@ -26,7 +26,7 @@
 						<label class="col-md-4 control-label">Product</label>
 						<div class="col-md-6">
 							<select class="form-control" id="select" name="product_id" required>
-								<option value="">Select One</option>
+								<option value="{{isset($preProduct)? $preProduct->id : ''}}">{{isset($preProduct)? $preProduct->name : ''}}</option>
 								@foreach($products as $product)
 									<option value="{{$product->id}}">{{$product->name}}</option>
 								@endforeach
