@@ -67,7 +67,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         if($product->stock->stock == 0){
             foreach ($product->inventories as $in) {
-                $in->delete()
+                $in->delete();
             }
         	$product->stock->delete();
 	        if($product->delete()){
