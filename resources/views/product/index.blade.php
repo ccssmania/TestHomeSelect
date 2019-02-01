@@ -26,7 +26,7 @@
 					<td>
 						<a href="{{url('/product/'. $product->id .'/edit')}}">Edit</a>
 						<a href="{{url('/product/'.$product->id.'/inventory')}}" class="text-blue">Inventory</a>
-						@if( $product->stock && $product->stock->stock == 0 || null)
+						@if( $product->stock && $product->stock->stock == 0 )
 							@include('product.delete',['product' =>$product])
 						@endif
 					</td>
