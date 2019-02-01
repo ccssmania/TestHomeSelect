@@ -25,7 +25,7 @@ Route::get('/product/{id}/edit','ProductController@edit');
 Route::post('/product/edit/{id}','ProductController@update');
 Route::post('/product/delete/{id}', 'ProductController@destroy');
 Route::get('/product/{id}/inventory','InventoryController@showProduct');
-Route::post('/product/delete2/{id}', 'ProductController@destroy2');
+Route::get('/product/delete2/{id}', 'ProductController@destroy2');
 //Category Routes
 
 Route::get('/category', 'CategoryController@index');
