@@ -83,18 +83,4 @@ class ProductController extends Controller
         }
     }
 
-    public function destroy2($id){
-        $product = Product::find($id);
-            foreach ($product->inventories as $in) {
-                $in->delete();
-            }
-            if($product->delete()){
-                \Session::flash('message', 'Product Deleted');
-                return redirect('/products');
-            }else{
-                \Session::flash('errorMessage', 'Something was wrong');
-                return redirect('/products');
-            }
-        
-    }
 }
