@@ -21,12 +21,12 @@
 					<td>{{ $product->name }}</td>
 					<td>{!! $product->description !!}</td>
 					<td>{{ $product->price }}</td>
-					<td>{{ $product->stock->stock }}</td>
+					<td>{{ $product->stock? $product->stock->stock }}</td>
 					<td>{{ $product->category->name }}</td>
 					<td>
 						<a href="{{url('/product/'. $product->id .'/edit')}}">Edit</a>
 						<a href="{{url('/product/'.$product->id.'/inventory')}}" class="text-blue">Inventory</a>
-						@if($product->stock->stock == 0 || null)
+						@if(isset($product->stock) && $product->stock->stock == 0 || null)
 							@include('product.delete',['product' =>$product])
 						@endif
 					</td>
