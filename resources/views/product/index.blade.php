@@ -21,7 +21,7 @@
 					<td>{{ $product->name }}</td>
 					<td>{!! $product->description !!}</td>
 					<td>{{ $product->price }}</td>
-					<td>{{ $product->stock? $product->stock->stock }}</td>
+					<td>{{ $product->stock ? $product->stock->stock }}</td>
 					<td>{{ $product->category->name }}</td>
 					<td>
 						<a href="{{url('/product/'. $product->id .'/edit')}}">Edit</a>
