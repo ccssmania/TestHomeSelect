@@ -21,7 +21,7 @@ $(document).ready(function(){
 					location.reload();
 				},
 				error: function(err){
-					location.reload();
+					console.log(err)
 				}
 
 				});
