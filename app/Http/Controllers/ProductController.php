@@ -66,6 +66,9 @@ class ProductController extends Controller
     public function destroy($id){
         $product = Product::find($id);
         if($product->stock->stock == 0){
+            foreach ($product->inventories as $in) {
+                $in->delete()
+            }
         	$product->stock->delete();
 	        if($product->delete()){
 	            \Session::flash('message', 'Product Deleted');
